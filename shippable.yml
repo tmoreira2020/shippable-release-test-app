@@ -21,7 +21,7 @@ jdk:
   - oraclejdk7
 
 env:                                                
-  - SEED_VERSION=1.2.0                           
+  - SEED_VERSION=1.0.0                           
 
 before_script:
   - git remote set-url origin git@github.com:$REPO_NAME.git
