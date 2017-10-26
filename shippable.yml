@@ -50,6 +50,6 @@ after_success:
       git merge master &&
       mvn build-helper:parse-version versions:set -DnewVersion=$\{parsedVersion.nextMajorVersion\}.$\{parsedVersion.nextMinorVersion\}.$\{parsedVersion.incrementalVersion\}-SNAPSHOT &&
       git commit -am "Prepare for next development iteration" &&
-      git push origin --all;
+      ssh-agent bash -c "ssh-add ~/keys/id_${JOB_ID}; git push origin --all";
     fi
   - mvn coveralls:report deploy
