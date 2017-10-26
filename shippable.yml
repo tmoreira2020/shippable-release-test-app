@@ -29,6 +29,7 @@ before_script:
   - git remote set-url origin git@github.com:$REPO_NAME.git
 
 build:
+  cache: true
   ci:
     #Create folders for test and code coverage
     - mkdir -p shippable/testresults
