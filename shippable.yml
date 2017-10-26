@@ -40,7 +40,7 @@ build:
     - cp -r target shippable/codecoverage
 
 after_success:
-  - mvn clean package coveralls:report deploy
+  - mvn coveralls:report deploy
   - >
     if [ "$BRANCH" == "master" ]; then 
       mvn versions:set "-DnewVersion=${SEED_VERSION}";
