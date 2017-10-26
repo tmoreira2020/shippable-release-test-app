@@ -45,7 +45,7 @@ after_success:
       mvn versions:set "-DnewVersion=${SEED_VERSION}" &&
       git commit -am "Releasing version ${SEED_VERSION}" &&
       mvn clean deploy &&
-      git checkout -b develop &&
+      git checkout -B develop &&
       git merge master &&
       mvn build-helper:parse-version versions:set -DnewVersion=$\{parsedVersion.nextMajorVersion\}.$\{parsedVersion.nextMinorVersion\}.$\{parsedVersion.incrementalVersion\}-SNAPSHOT &&
       git commit -am "Prepare for next development iteration" &&
