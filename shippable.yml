@@ -20,9 +20,10 @@ language: java
 jdk:
   - oraclejdk7
 
-env:                                                
-  - SEED_VERSION=1.0.0                           
-  - secure: w3Hp2aQRB4/WeV2r9l4uE/XHHgsupNXT7YLeo5IuTScgwazovvBv1K9/YncaavvmilBr8cXU7imJ5enhuL7YlUxJVjxxMIx8I7XvZrX8YfrcV/wrzDourJnnI8dwJwbiemerGYlXuGw4ohqUbKJF5Gft/RL2uJa8PgE0Tx4/f+brtVGs+pvndUHvIr+rhm1onS/bg36ugjPL7B8RpkFTjKr3Eof/EU5kUNH/BX2bCNdMtaFm3Gj5kx7smHEoqFNntv+BfvTBAjzupofTDpaVjVF676I7/hhibkPFAlGq+4RKs5msGxFwFktxokzhCveQKRN7pAu9WFDZnItyPNf/Jw==
+env:
+  global:
+    - SEED_VERSION=1.0.0
+    - secure: w3Hp2aQRB4/WeV2r9l4uE/XHHgsupNXT7YLeo5IuTScgwazovvBv1K9/YncaavvmilBr8cXU7imJ5enhuL7YlUxJVjxxMIx8I7XvZrX8YfrcV/wrzDourJnnI8dwJwbiemerGYlXuGw4ohqUbKJF5Gft/RL2uJa8PgE0Tx4/f+brtVGs+pvndUHvIr+rhm1onS/bg36ugjPL7B8RpkFTjKr3Eof/EU5kUNH/BX2bCNdMtaFm3Gj5kx7smHEoqFNntv+BfvTBAjzupofTDpaVjVF676I7/hhibkPFAlGq+4RKs5msGxFwFktxokzhCveQKRN7pAu9WFDZnItyPNf/Jw==
 
 before_script:
   - git remote set-url origin git@github.com:$REPO_NAME.git
