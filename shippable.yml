@@ -43,7 +43,7 @@ after_success:
   - mvn build-helper:released-version
   - echo "$\{releasedVersion.version\}ttt"
   - echo "$BRANCH"
-  - echo $SEED_VERSION"
+  - echo "$SEED_VERSION"
   - echo "$\{SEED_VERSION\}"
   - >
     if [[ "$BRANCH" == "master" && "$SEED_VERSION" != "${releasedVersion.version}"]]; then
