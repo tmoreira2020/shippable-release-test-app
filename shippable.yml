@@ -42,7 +42,7 @@ build:
 after_success:
   - export CURRENT_VERSION=`mvn -q -N org.codehaus.mojo:exec-maven-plugin:1.6.0:exec -Dexec.executable='echo' -Dexec.args='${project.version}'`
   - >
-    if ["$BRANCH" == "master"] && ["$SEED_VERSION" != "$CURRENT_VERSION"]; then
+    if [ "$BRANCH" == "master" ] && [ "$SEED_VERSION" != "$CURRENT_VERSION" ]; then
       mvn versions:set "-DnewVersion=${SEED_VERSION}" &&
       git commit -am "Releasing version ${SEED_VERSION}" &&
       git tag -a "${SEED_VERSION}"
