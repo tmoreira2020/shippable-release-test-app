@@ -41,10 +41,14 @@ build:
     - cp -r target shippable/codecoverage
 
 after_success:
-  - apt-get install -y tree
-  - tree /tmp/ssh
+  - mvn build-helper:released-version
+  - echo "${releasedVersion.version}"
+  - echo "$\{releasedVersion.version\}ttt"
+  - echo "$BRANCH"
+  - echo $SEED_VERSION"
+  - echo "$\{SEED_VERSION\}"
   - >
-    if [[ "$BRANCH" == "master" ]]; then
+    if [[ "$BRANCH" == "master" && "$SEED_VERSION" != "${releasedVersion.version}"]]; then
       mvn versions:set "-DnewVersion=${SEED_VERSION}" &&
       git commit -am "Releasing version ${SEED_VERSION}" &&
       mvn clean deploy &&
