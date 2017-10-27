@@ -11,7 +11,7 @@
 	<packaging>war</packaging>
 	<name>Spring Boot Web Static Sample</name>
 	<description>Spring Boot Web Static Sample</description>
-	<version>1.0.1-SNAPSHOT</version>
+	<version>1.0.0</version>
 	<url>http://projects.spring.io/spring-boot/</url>
 	<organization>
 		<name>Pivotal Software, Inc.</name>
