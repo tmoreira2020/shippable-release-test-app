@@ -42,7 +42,6 @@ build:
 
 after_success:
   - mvn build-helper:released-version
-  - echo "${releasedVersion.version}"
   - echo "$\{releasedVersion.version\}ttt"
   - echo "$BRANCH"
   - echo $SEED_VERSION"
