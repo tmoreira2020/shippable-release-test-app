@@ -45,12 +45,13 @@ after_success:
     if ["$BRANCH" == "master"] && ["$SEED_VERSION" != "$CURRENT_VERSION"]; then
       mvn versions:set "-DnewVersion=${SEED_VERSION}" &&
       git commit -am "Releasing version ${SEED_VERSION}" &&
+      git tag -a "${SEED_VERSION}"
       mvn clean deploy &&
       git checkout -B develop &&
       git merge master &&
       mvn build-helper:parse-version versions:set -DnewVersion=$\{parsedVersion.majorVersion\}.$\{parsedVersion.minorVersion\}.$\{parsedVersion.nextIncrementalVersion\}-SNAPSHOT &&
       git commit -am "Prepare for next development iteration" &&
-      ssh-agent bash -c "ssh-add /tmp/ssh/shippablesshkey; git push origin --all";
+      ssh-agent bash -c "ssh-add /tmp/ssh/shippablesshkey; git push origin --all --tags";
     fi
   - mvn coveralls:report deploy
 
