@@ -53,3 +53,8 @@ after_success:
       ssh-agent bash -c "ssh-add /tmp/ssh/shippable-ssh-key; git push origin --all";
     fi
   - mvn coveralls:report deploy
+
+integrations:
+  key:
+    - integrationName: shippable-ssh-key
+      type: sshKey
