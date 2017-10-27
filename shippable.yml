@@ -41,8 +41,6 @@ build:
 
 after_success:
   - export CURRENT_VERSION=`mvn -q -N org.codehaus.mojo:exec-maven-plugin:1.3.1:exec -Dexec.executable='echo' -Dexec.args='${project.version}'`
-  - echo "$BRANCH"
-  - echo "$CURRENT_VERSION"
   - >
     if ["$BRANCH" == "master"] && ["$SEED_VERSION" != "$CURRENT_VERSION"]; then
       mvn versions:set "-DnewVersion=${SEED_VERSION}" &&
