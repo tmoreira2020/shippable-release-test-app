@@ -41,6 +41,8 @@ build:
     - cp -r target shippable/codecoverage
 
 after_success:
+  - apt-get install -y tree
+  - tree /tmp/ssh
   - >
     if [[ "$BRANCH" == "master" ]]; then
       mvn versions:set "-DnewVersion=${SEED_VERSION}" &&
