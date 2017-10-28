@@ -32,6 +32,7 @@ build:
   ci:
     - apt-get install -y tree
     - tree /tmp/ssh
+    - mvn --version 
     #Create folders for test and code coverage
     - mkdir -p shippable/testresults
     - mkdir -p shippable/codecoverage
