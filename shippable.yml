@@ -33,7 +33,7 @@ build:
     - apt-get install -y tree
     - tree /tmp/ssh
     - mvn --version
-    - tree /usr/local 
+    - tree -L 1 /usr/local 
     #Create folders for test and code coverage
     - mkdir -p shippable/testresults
     - mkdir -p shippable/codecoverage
